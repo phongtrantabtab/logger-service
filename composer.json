@@ -1,0 +1,27 @@
+{
+    "name": "feng/logger",
+    "description": "A package which provides a simple logger",
+    "type": "library",
+    "autoload": {
+        "psr-4": {
+            "Feng\\Logger\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Feng\\Logger\\LoggerServiceProvider"
+            ],
+            "aliases": {
+                "Logger": "Feng\\Logger\\Facades\\Logger"
+            }
+        }
+    },
+    "authors": [
+        {
+            "name": "PhongTran"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {}
+}
