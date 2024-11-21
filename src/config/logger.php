@@ -1,6 +1,6 @@
 <?php
 
-use Feng\Logger\LogFormatter;
+use PhongTran\Logger\LogFormatter;
 
 return [
 
