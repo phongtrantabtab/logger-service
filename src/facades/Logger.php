@@ -1,6 +1,6 @@
 <?php
 
-namespace PhongTran\Logger\facades;
+namespace phongtran\Logger\facades;
 
 use Illuminate\Support\Facades\Facade;
 

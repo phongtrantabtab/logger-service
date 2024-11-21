@@ -1,6 +1,6 @@
 <?php
 
-use PhongTran\Logger\LogFormatter;
+use phongtran\Logger\LogFormatter;
 
 return [
 

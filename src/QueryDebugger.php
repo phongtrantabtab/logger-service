@@ -1,6 +1,6 @@
 <?php
 
-namespace PhongTran\Logger;
+namespace phongtran\Logger;
 
 use DateTime;
 use Illuminate\Support\Facades\DB;
@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Log;
 /**
  * Performs settings for debugging executed queries.
  *
- * @package PhongTran\Logger
+ * @package phongtran\Logger
  */
 class QueryDebugger
 {

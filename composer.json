@@ -10,18 +10,21 @@
     "extra": {
         "laravel": {
             "providers": [
-                "PhongTran\\Logger\\LoggerServiceProvider"
+                "phongtran\\Logger\\LoggerServiceProvider"
             ],
             "aliases": {
-                "Logger": "PhongTran\\Logger\\Facades\\Logger"
+                "Logger": "phongtran\\Logger\\Facades\\Logger"
             }
         }
     },
     "authors": [
         {
-            "name": "PhongTran"
+            "name": "phongtran"
         }
     ],
+    "config": {
+        "sort-packages": true
+    },
     "minimum-stability": "dev",
     "require": {}
 }
