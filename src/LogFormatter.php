@@ -1,6 +1,6 @@
 <?php
 
-namespace phongtran\Logger;
+namespace PhongTran\Logger;
 
 use Monolog\Formatter\LineFormatter;
 use Monolog\Logger;

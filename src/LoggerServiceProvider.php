@@ -1,8 +1,8 @@
 <?php
 
-namespace phongtran\Logger;
+namespace PhongTran\Logger;
 
-use phongtran\Logger\App\Http\Middleware\LogActivity;
+use PhongTran\Logger\App\Http\Middleware\LogActivity;
 use Illuminate\Routing\Router;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\ServiceProvider;

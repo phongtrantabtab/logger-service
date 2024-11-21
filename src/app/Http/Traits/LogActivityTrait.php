@@ -1,6 +1,6 @@
 <?php
 
-namespace phongtran\Logger\app\Http\Traits;
+namespace PhongTran\Logger\app\Http\Traits;
 
 trait LogActivityTrait
 {
