@@ -37,9 +37,9 @@ class Logger
      * @param string $channel
      * @param string $level
      * @param string $message
-     * @return mixed
+     * @return void
      */
-    private static function log(string $channel, string $level, string $message): mixed
+    private static function log(string $channel, string $level, string $message): void
     {
         $logMessage = $channel === LoggerDef::CHANNEL_ACTIVITY
             ? json_encode($message)
@@ -118,9 +118,9 @@ class Logger
      *
      * @param string $query
      * @param float $executionTime
-     * @return mixed
+     * @return void
      */
-    public static function sql(string $query = '', float $executionTime = 0): mixed
+    public static function sql(string $query = '', float $executionTime = 0): void
     {
         Log::channel(LoggerDef::CHANNEL_SQL)
             ->log(LoggerDef::LEVEL_INFO, "[ExecutionTime: {$executionTime}ms] {$query}");

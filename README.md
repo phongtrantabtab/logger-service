@@ -18,9 +18,6 @@ Make sure the required parameters are configured in the config/logger.php or .en
 
 ```.env
     ENABLE_QUERY_DEBUGGER=true
-    LOGGER_TABLE=logs
-    LOGGER_QUERY_TABLE=log_queries
-    LOGGER_CONNECTION=mysql
 ```
 
 ## Usage
@@ -71,7 +68,6 @@ To log SQL queries, you just need to add the configuration in the .env file. The
 
 ```.env
 ENABLE_QUERY_DEBUGGER=true
-LOGGER_QUERY_TABLE=log_queries
 ```
 
 #### Log Activities
