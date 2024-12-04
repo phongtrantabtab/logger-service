@@ -34,7 +34,7 @@ class QueryDebugger
                 || preg_match('/update\s+([^\s]+)/i', $sql->sql, $matches)
                 || preg_match('/into\s+([^\s]+)/i', $sql->sql, $matches)
             ) {
-                $table = $matches[1];
+                $table = self::removeSemicolon($matches[1]);
             }
             if (! in_array($table, $tableIgnored)) {
                 foreach ($sql->bindings as $index => $binding) {
@@ -52,5 +52,24 @@ class QueryDebugger
                 Logger::sql($query, $executionTime);
             }
         });
+    }
+
+    /**
+     * Remove semicolon
+     *
+     * @param string $string
+     * @return string
+     */
+    private static function removeSemicolon(string $string): string
+    {
+        if (str_contains($string, '"')) {
+            return str_replace('"', '', $string);
+        }
+        if (str_contains($string, '`')) {
+            return str_replace('`', '', $string);
+        }
+        if (str_contains($string, "'")) {
+            return str_replace("'", '', $string);
+        }
     }
 }
