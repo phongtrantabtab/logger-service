@@ -23,9 +23,9 @@ class QueryDebugger
     {
         DB::listen(function ($sql) {
             $tableIgnored = [
-                '`sessions`',
-                '`logs`',
-                '`log_queries`',
+                'sessions',
+                'logs',
+                'log_queries',
             ];
             // Extract the table name (this is a basic approach and might need adjustment based on query structure)
             $table = '';
