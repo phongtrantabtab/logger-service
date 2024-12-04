@@ -19,7 +19,10 @@ class LogFormatter
     /**
      * Invoker
      *
-     * @param  \Illuminate\Log\Logger  $logger  Logger
+     * @param \Illuminate\Log\Logger $logger
+     * @param string $logFormat
+     * @param string $dateFormat
+     * @return void
      */
     public function __invoke(\Illuminate\Log\Logger $logger, string $logFormat, string $dateFormat): void
     {

@@ -22,11 +22,6 @@ class QueryDebugger
     public static function setup(): void
     {
         DB::listen(function ($sql) {
-            $tableIgnored = [
-                'sessions',
-                'logs',
-                'log_queries',
-            ];
             // Extract the table name (this is a basic approach and might need adjustment based on query structure)
             $table = '';
             if (
@@ -36,7 +31,7 @@ class QueryDebugger
             ) {
                 $table = self::removeSemicolon($matches[1]);
             }
-            if (! in_array($table, $tableIgnored)) {
+            if (!in_array($table, self::getIgnoredTables())) {
                 foreach ($sql->bindings as $index => $binding) {
                     if ($binding instanceof DateTime) {
                         $sql->bindings[$index] = $binding->format('\'Y-m-d H:i:s\'');
@@ -62,14 +57,27 @@ class QueryDebugger
      */
     private static function removeSemicolon(string $string): string
     {
-        if (str_contains($string, '"')) {
-            return str_replace('"', '', $string);
-        }
-        if (str_contains($string, '`')) {
-            return str_replace('`', '', $string);
-        }
-        if (str_contains($string, "'")) {
-            return str_replace("'", '', $string);
-        }
+        return preg_replace('/["`\';]/', '', $string);
+    }
+
+    /**
+     * Get Ignored Tables
+     *
+     * @return array
+     */
+    private static function getIgnoredTables(): array
+    {
+        $logTables = [
+            config('logger.table'),
+            config('logger.query_table')
+        ];
+
+        $ignoredTables = array_filter(array_map(
+                'trim',
+                explode(',', config('logger.ignored_tables', ''))
+            )
+        );
+
+        return array_merge($logTables, $ignoredTables);
     }
 }

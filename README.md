@@ -79,6 +79,22 @@ Route::group(['middleware' => 'activity'], function () {
 });
 ```
 
+#### HTTP Exception
+Add this line in Handle Exceptions (bootstrap/app.php)
+```php
+return Application::configure(basePath: dirname(__DIR__))
+    ->withRouting(
+        web: __DIR__.'/../routes/web.php',
+        commands: __DIR__.'/../routes/console.php',
+        health: '/up',
+    )
+    ->withMiddleware(function (Middleware $middleware) {
+    })
+    ->withExceptions(function (Exceptions $exceptions) {
+        \phongtran\Logger\LoggerHandler::handle($exceptions); //Log exceptions
+    })->create();
+```
+
 ## Advanced Features
 #### Backtrace Formatting
 

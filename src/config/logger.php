@@ -44,9 +44,10 @@ return [
     |
     */
     'enable_query_debugger' => env('ENABLE_QUERY_DEBUGGER', false),
-    'logger_table' => env('LOGGER_TABLE', 'logs'),
-    'logger_query_table' => env('LOGGER_QUERY_TABLE', 'log_queries'),
-    'logger_connection' => env('LOGGER_CONNECTION', env('DB_CONNECTION', 'mysql')),
+    'table' => env('LOGGER_TABLE', 'logs'),
+    'query_table' => env('LOGGER_QUERY_TABLE', 'log_queries'),
+    'connection' => env('LOGGER_CONNECTION', env('DB_CONNECTION', 'mysql')),
+    'ignored_tables' => env('LOGGER_IGNORED_TABLES', ''), //Example: LOGGER_IGNORED_TABLES=sessions,users
 
     /*
     |--------------------------------------------------------------------------
@@ -76,7 +77,7 @@ return [
         ],
 
         'warning' => [
-            'driver' => 'single',
+            'driver' => 'daily',
             'path' => storage_path('logs/warn.log'),
             'level' => 'warning',
             'tap' => [
@@ -88,7 +89,7 @@ return [
         ],
 
         'info' => [
-            'driver' => 'single',
+            'driver' => 'daily',
             'path' => storage_path('logs/info.log'),
             'tap' => [
                 LogFormatter::class.':'.implode(',', [
@@ -140,7 +141,7 @@ return [
             'level' => 'info',
             'tap' => [
                 LogFormatter::class.':'.implode(',', [
-                    '[%datetime%] [%level_name%] %message% %context%'.PHP_EOL,
+                    '[%datetime%] %message% %context%'.PHP_EOL,
                     'Y-m-d H:i:s:v',
                 ]),
             ],

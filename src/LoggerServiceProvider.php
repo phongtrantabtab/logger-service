@@ -58,16 +58,6 @@ class LoggerServiceProvider extends ServiceProvider
     }
 
     /**
-     * Get the list of listeners and events.
-     *
-     * @return array
-     */
-    private function getListeners(): array
-    {
-        return $this->listeners;
-    }
-
-    /**
      * Register the list of listeners and events.
      *
      * @return void
