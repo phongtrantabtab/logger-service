@@ -4,12 +4,13 @@ namespace phongtran\Logger;
 
 use DateTime;
 use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Log;
 
 /**
- * Performs settings for debugging executed queries.
+ * Query Debugger
  *
  * @package phongtran\Logger
+ * @copyright Copyright (c) 2024, jarvis.phongtran
+ * @author phongtran <jarvis.phongtran@gmail.com>
  */
 class QueryDebugger
 {
@@ -30,11 +31,10 @@ class QueryDebugger
                     }
                 }
             }
-
-            $query = str_replace([ '%', '?' ], [ '%%', '%s' ], $sql->sql);
+            $query = str_replace(['%', '?'], ['%%', '%s'], $sql->sql);
             $query = vsprintf($query, $sql->bindings);
-            $query = "[ExecutionTime: {$sql->time}ms] {$query}";
-            Log::channel('sql')->info($query);
+            $executionTime = $sql->time;
+            Logger::sql($query, $executionTime);
         });
     }
 }

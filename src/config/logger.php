@@ -43,8 +43,9 @@ return [
     | It will be optimized in dev environment to be able to develop applications
     |
     */
-    'enable_log_activity' => env('LOGGER_ENABLE_ACTIVITY', false),
+    'enable_query_debugger' => env('ENABLE_QUERY_DEBUGGER', false),
     'logger_table' => env('LOGGER_TABLE', 'logs'),
+    'logger_query_table' => env('LOGGER_QUERY_TABLE', 'log_queries'),
     'logger_connection' => env('LOGGER_CONNECTION', env('DB_CONNECTION', 'mysql')),
 
     /*

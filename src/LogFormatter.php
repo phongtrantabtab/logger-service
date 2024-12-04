@@ -7,6 +7,13 @@ use Monolog\Logger;
 use Monolog\Processor\IntrospectionProcessor;
 use Monolog\Processor\WebProcessor;
 
+/**
+ * Log Formatter
+ *
+ * @package phongtran\Logger
+ * @copyright Copyright (c) 2024, jarvis.phongtran
+ * @author phongtran <jarvis.phongtran@gmail.com>
+ */
 class LogFormatter
 {
     /**

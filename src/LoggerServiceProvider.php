@@ -7,6 +7,13 @@ use Illuminate\Routing\Router;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\ServiceProvider;
 
+/**
+ * Logger Service Provider
+ *
+ * @package phongtran\Logger
+ * @copyright Copyright (c) 2024, jarvis.phongtran
+ * @author phongtran <jarvis.phongtran@gmail.com>
+ */
 class LoggerServiceProvider extends ServiceProvider
 {
     /**
@@ -19,10 +26,12 @@ class LoggerServiceProvider extends ServiceProvider
     {
         $router->middlewareGroup('activity', [LogActivity::class]);
         if (Config::get('logger')) {
-            Config::set('logging', array_replace_recursive(
+            Config::set('logging', array_merge(
                 Config::get('logging'),
                 Config::get('logger')
             ));
+        }
+        if (config('logger.enable_query_debugger')) {
             QueryDebugger::setup();
         }
     }
@@ -34,13 +43,37 @@ class LoggerServiceProvider extends ServiceProvider
      */
     public function register(): void
     {
-        // Register Facade Logger
+        if (file_exists(config_path('logger.php'))) {
+            $this->mergeConfigFrom(config_path('logger.php'), 'Logger');
+        } else {
+            $this->mergeConfigFrom(__DIR__ . '/config/logger.php', 'Logger');
+        }
+
         $this->app->singleton('logger', function ($app) {
             return new Logger();
         });
 
-        // Public config file logger.php
+        $this->registerEventListeners();
         $this->publishFiles();
+    }
+
+    /**
+     * Get the list of listeners and events.
+     *
+     * @return array
+     */
+    private function getListeners(): array
+    {
+        return $this->listeners;
+    }
+
+    /**
+     * Register the list of listeners and events.
+     *
+     * @return void
+     */
+    private function registerEventListeners(): void
+    {
     }
 
     /**
@@ -50,7 +83,7 @@ class LoggerServiceProvider extends ServiceProvider
      */
     private function publishFiles(): void
     {
-        $publishTag = 'Logger';
+        $publishTag = 'logger';
 
         $this->publishes([
             __DIR__ . '/config/logger.php' => base_path('config/logger.php'),
