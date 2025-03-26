@@ -31,6 +31,7 @@ class LoggerServiceProvider extends ServiceProvider
                 Config::get('logger')
             ));
         }
+        $this->mergeConfigFrom(__DIR__ . '/config/logger.php', 'logger');
         if (config('logger.enable_query_debugger')) {
             QueryDebugger::setup();
         }
@@ -73,10 +74,10 @@ class LoggerServiceProvider extends ServiceProvider
      */
     private function publishFiles(): void
     {
-        $publishTag = 'logger';
-
-        $this->publishes([
-            __DIR__ . '/config/logger.php' => base_path('config/logger.php'),
-        ], $publishTag);
+//        $publishTag = 'logger';
+//
+//        $this->publishes([
+//            __DIR__ . '/config/logger.php' => base_path('config/logger.php'),
+//        ], $publishTag);
     }
 }

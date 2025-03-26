@@ -1,11 +1,11 @@
 {
-    "name": "phongtrantabtab/logger",
+    "name": "phongtrantabtab/logger-service",
     "description": "A package which provides a simple logger",
     "type": "package",
     "license": "MIT",
     "autoload": {
         "psr-4": {
-            "phongtrantabtab\\Logger\\": "src/"
+            "Tabtab\\Logger\\": "src/"
         }
     },
     "extra": {
