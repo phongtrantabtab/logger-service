@@ -12,7 +12,7 @@ use Illuminate\Support\ServiceProvider;
  *
  * @package phongtran\Logger
  * @copyright Copyright (c) 2024, jarvis.phongtran
- * @author phongtran <jarvis.phongtran@gmail.com>
+ * @author phongtran <phong.tran@tabtab.me>
  */
 class LoggerServiceProvider extends ServiceProvider
 {

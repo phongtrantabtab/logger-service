@@ -2,17 +2,17 @@
 
 namespace phongtran\Logger\app\Http\Middleware;
 
-use Closure;
-use phongtran\Logger\App\Http\Traits\LogActivityTrait;
-use phongtran\Logger\Logger;
 use Illuminate\Http\Request;
+use phongtran\Logger\Logger;
+use phongtran\Logger\App\Http\Traits\LogActivityTrait;
+use Closure;
 
 /**
  * LogActivity Middleware
  *
  * @package phongtran\Logger\app\Http\Middleware
  * @copyright Copyright (c) 2024, jarvis.phongtran
- * @author phongtran <jarvis.phongtran@gmail.com>
+ * @author phongtran <phong.tran@tabtab.me>
  */
 class LogActivity
 {

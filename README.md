@@ -116,6 +116,6 @@ This package is licensed under the [MIT license](https://opensource.org/licenses
 
 ## Author
 #### Phong Tran
-Email: [jarvis.phongtran@gmail.com](https://github.com/mockingbitch)
+Email: [phong.tran@tabtab.me](https://github.com/mockingbitch)
 
 GitHub: [github/mockingbitch](https://github.com/mockingbitch)

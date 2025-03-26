@@ -3,15 +3,15 @@
 namespace phongtran\Logger\app\Http\Traits;
 
 use Illuminate\View\View;
-use Symfony\Component\HttpFoundation\BinaryFileResponse;
 use Symfony\Component\HttpFoundation\StreamedResponse;
+use Symfony\Component\HttpFoundation\BinaryFileResponse;
 
 /**
  * LogActivity Trait
  *
  * @package phongtran\Logger\app\Http\Traits
  * @copyright Copyright (c) 2024, jarvis.phongtran
- * @author phongtran <jarvis.phongtran@gmail.com>
+ * @author phongtran <phong.tran@tabtab.me>
  */
 trait LogActivityTrait
 {

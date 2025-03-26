@@ -21,7 +21,7 @@
     "authors": [
         {
             "name": "phongtran",
-            "email": "jarvis.phongtran@gmail.com"
+            "email": "phong.tran@tabtab.com"
         }
     ],
     "config": {
@@ -30,7 +30,7 @@
     "minimum-stability": "dev",
     "prefer-stable": true,
     "require": {
-        "php": "^8.1",
-        "laravel/framework": "^10.0 || ^11.0"
+        "php": ">=8.0",
+        "laravel/lumen-framework": "^9.0"
     }
 }
