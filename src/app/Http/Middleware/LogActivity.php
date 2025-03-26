@@ -1,10 +1,10 @@
 <?php
 
-namespace phongtran\Logger\app\Http\Middleware;
+namespace phongtrantabtab\Logger\app\Http\Middleware;
 
 use Illuminate\Http\Request;
-use phongtran\Logger\Logger;
-use phongtran\Logger\App\Http\Traits\LogActivityTrait;
+use phongtrantabtab\Logger\Logger;
+use phongtrantabtab\Logger\App\Http\Traits\LogActivityTrait;
 use Closure;
 
 /**

@@ -1,9 +1,9 @@
 <?php
 
-namespace phongtran\Logger;
+namespace phongtrantabtab\Logger;
 
 use Illuminate\Support\Facades\Log;
-use phongtran\Logger\app\Services\Definitions\LoggerDef;
+use phongtrantabtab\Logger\app\Services\Definitions\LoggerDef;
 
 /**
  * Logger

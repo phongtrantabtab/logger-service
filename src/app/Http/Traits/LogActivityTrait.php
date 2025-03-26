@@ -1,6 +1,6 @@
 <?php
 
-namespace phongtran\Logger\app\Http\Traits;
+namespace phongtrantabtab\Logger\app\Http\Traits;
 
 use Illuminate\View\View;
 use Symfony\Component\HttpFoundation\StreamedResponse;

@@ -1,20 +1,20 @@
 {
-    "name": "phongtran/logger",
+    "name": "phongtrantabtab/logger",
     "description": "A package which provides a simple logger",
     "type": "package",
     "license": "MIT",
     "autoload": {
         "psr-4": {
-            "phongtran\\Logger\\": "src/"
+            "phongtrantabtab\\Logger\\": "src/"
         }
     },
     "extra": {
         "laravel": {
             "providers": [
-                "phongtran\\Logger\\LoggerServiceProvider"
+                "phongtrantabtab\\Logger\\LoggerServiceProvider"
             ],
             "aliases": {
-                "Logger": "phongtran\\Logger\\Facades\\Logger"
+                "Logger": "phongtrantabtab\\Logger\\Facades\\Logger"
             }
         }
     },

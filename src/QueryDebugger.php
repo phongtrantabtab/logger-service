@@ -1,6 +1,6 @@
 <?php
 
-namespace phongtran\Logger;
+namespace phongtrantabtab\Logger;
 
 use DateTime;
 use Illuminate\Support\Facades\DB;

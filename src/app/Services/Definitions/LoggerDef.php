@@ -1,6 +1,6 @@
 <?php
 
-namespace phongtran\Logger\app\Services\Definitions;
+namespace phongtrantabtab\Logger\app\Services\Definitions;
 
 /**
  * Logger Definition
