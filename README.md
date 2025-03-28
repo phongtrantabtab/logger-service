@@ -27,7 +27,7 @@ To log various messages, use the Logger class. The package supports logging at d
 #### Log a Warning Message
 
 ```php
-use phongtrantabtab\Logger\Logger;
+use Tabtab\Logger\Logger;
 
 Logger::warning('This is a warning message.');
 ```
@@ -35,14 +35,14 @@ Logger::warning('This is a warning message.');
 #### Log an Exception Message
 
 ```php
-use phongtrantabtab\Logger\Logger;
+use Tabtab\Logger\Logger;
 
 Logger::exception('Error occurred: Database connection failed.');
 ```
 #### Log a Fatal Error Message
 
 ```php
-use phongtrantabtab\Logger\Logger;
+use Tabtab\Logger\Logger;
 
 Logger::fatal('A critical error occurred while processing the request.');
 ```
@@ -50,7 +50,7 @@ Logger::fatal('A critical error occurred while processing the request.');
 #### Log Debug Information
 
 ```php
-use phongtrantabtab\Logger\Logger;
+use Tabtab\Logger\Logger;
 
 Logger::debug('Debugging application state: User has logged in.');
 ```
@@ -58,7 +58,7 @@ Logger::debug('Debugging application state: User has logged in.');
 #### Log an Info Message
 
 ```php
-use phongtrantabtab\Logger\Logger;
+use Tabtab\Logger\Logger;
 
 Logger::info('User profile updated successfully.');
 ```

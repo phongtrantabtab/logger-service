@@ -3,7 +3,7 @@
 namespace Tabtab\Logger;
 
 use Illuminate\Support\Facades\Log;
-use phongtrantabtab\Logger\app\Services\Definitions\LoggerDef;
+use Tabtab\Logger\app\Services\Definitions\LoggerDef;
 
 /**
  * Logger

@@ -3,8 +3,8 @@
 namespace Tabtab\Logger\app\Http\Middleware;
 
 use Illuminate\Http\Request;
-use phongtrantabtab\Logger\Logger;
-use phongtrantabtab\Logger\App\Http\Traits\LogActivityTrait;
+use Tabtab\Logger\Logger;
+use Tabtab\Logger\App\Http\Traits\LogActivityTrait;
 use Closure;
 
 /**

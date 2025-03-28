@@ -2,7 +2,7 @@
 
 namespace Tabtab\Logger;
 
-use phongtrantabtab\Logger\App\Http\Middleware\LogActivity;
+use Tabtab\Logger\App\Http\Middleware\LogActivity;
 use Illuminate\Routing\Router;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\ServiceProvider;
@@ -26,12 +26,10 @@ class LoggerServiceProvider extends ServiceProvider
     {
         $this->mergeConfigFrom(__DIR__ . '/config/logger.php', 'logging');
         $router->middlewareGroup('activity', [LogActivity::class]);
-        Config::set('logging', array_merge(
-            Config::get('logging'),
-            Config::get('logger')
-        ));
-//        $this->mergeConfigFrom(__DIR__ . '/config/logging.php', 'logger');
-        if (config('logger.enable_query_debugger')) {
+        $this->publishes([
+            __DIR__ . '/../config/logger.php' => config_path('logging.php'),
+        ], 'config');
+        if (config('logging.enable_query_debugger')) {
             QueryDebugger::setup();
         }
     }

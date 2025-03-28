@@ -1,6 +1,6 @@
 <?php
 
-use phongtrantabtab\Logger\LogFormatter;
+use Tabtab\Logger\LogFormatter;
 
 return [
 
