@@ -1,6 +1,6 @@
 <?php
 
-namespace phongtrantabtab\Logger\app\Http\Middleware;
+namespace Tabtab\Logger\app\Http\Middleware;
 
 use Illuminate\Http\Request;
 use phongtrantabtab\Logger\Logger;

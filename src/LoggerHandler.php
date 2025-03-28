@@ -1,6 +1,6 @@
 <?php
 
-namespace phongtrantabtab\Logger;
+namespace Tabtab\Logger;
 
 use Illuminate\Foundation\Configuration\Exceptions;
 use Throwable;

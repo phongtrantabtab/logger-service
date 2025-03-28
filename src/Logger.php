@@ -1,6 +1,6 @@
 <?php
 
-namespace phongtrantabtab\Logger;
+namespace Tabtab\Logger;
 
 use Illuminate\Support\Facades\Log;
 use phongtrantabtab\Logger\app\Services\Definitions\LoggerDef;

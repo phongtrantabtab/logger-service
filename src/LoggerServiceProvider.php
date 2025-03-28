@@ -1,6 +1,6 @@
 <?php
 
-namespace phongtrantabtab\Logger;
+namespace Tabtab\Logger;
 
 use phongtrantabtab\Logger\App\Http\Middleware\LogActivity;
 use Illuminate\Routing\Router;
@@ -24,14 +24,13 @@ class LoggerServiceProvider extends ServiceProvider
      */
     public function boot(Router $router): void
     {
+        $this->mergeConfigFrom(__DIR__ . '/config/logger.php', 'logging');
         $router->middlewareGroup('activity', [LogActivity::class]);
-        if (Config::get('logger')) {
-            Config::set('logging', array_merge(
-                Config::get('logging'),
-                Config::get('logger')
-            ));
-        }
-        $this->mergeConfigFrom(__DIR__ . '/config/logger.php', 'logger');
+        Config::set('logging', array_merge(
+            Config::get('logging'),
+            Config::get('logger')
+        ));
+//        $this->mergeConfigFrom(__DIR__ . '/config/logging.php', 'logger');
         if (config('logger.enable_query_debugger')) {
             QueryDebugger::setup();
         }
@@ -44,11 +43,6 @@ class LoggerServiceProvider extends ServiceProvider
      */
     public function register(): void
     {
-        if (file_exists(config_path('logger.php'))) {
-            $this->mergeConfigFrom(config_path('logger.php'), 'Logger');
-        } else {
-            $this->mergeConfigFrom(__DIR__ . '/config/logger.php', 'Logger');
-        }
 
         $this->app->singleton('logger', function ($app) {
             return new Logger();

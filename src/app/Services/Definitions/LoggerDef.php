@@ -1,6 +1,6 @@
 <?php
 
-namespace phongtrantabtab\Logger\app\Services\Definitions;
+namespace Tabtab\Logger\app\Services\Definitions;
 
 /**
  * Logger Definition

@@ -1,6 +1,6 @@
 <?php
 
-namespace phongtrantabtab\Logger;
+namespace Tabtab\Logger;
 
 use Monolog\Formatter\LineFormatter;
 use Monolog\Logger;
