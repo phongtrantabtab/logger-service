@@ -3,7 +3,7 @@
 namespace Tabtab\Logger;
 
 use Tabtab\Logger\App\Http\Middleware\LogActivity;
-use Illuminate\Routing\Router;
+use Laravel\Lumen\Routing\Router;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\ServiceProvider;
 
@@ -27,7 +27,7 @@ class LoggerServiceProvider extends ServiceProvider
         $this->mergeConfigFrom(__DIR__ . '/config/logger.php', 'logging');
         $router->middlewareGroup('activity', [LogActivity::class]);
         $this->publishes([
-            __DIR__ . '/../config/logger.php' => config_path('logging.php'),
+            __DIR__ . '/config/logger.php' => config_path('logging.php'),
         ], 'config');
         if (config('logging.enable_query_debugger')) {
             QueryDebugger::setup();
@@ -41,7 +41,6 @@ class LoggerServiceProvider extends ServiceProvider
      */
     public function register(): void
     {
-
         $this->app->singleton('logger', function ($app) {
             return new Logger();
         });
