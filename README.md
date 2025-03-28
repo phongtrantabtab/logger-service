@@ -8,6 +8,13 @@ The Logger package provides advanced logging capabilities for Laravel applicatio
 composer require phongtran/logger
 ```
 After installation, you can publish the configuration file if needed:
+
+Register provider in ```bootstrap/app.php```:
+```bash
+$app->register(TabTab\Logger\Logger::class);
+```
+
+
 ```bash
 php artisan vendor:publish --tag=logger
 ```
